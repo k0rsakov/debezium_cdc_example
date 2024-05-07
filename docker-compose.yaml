@@ -1,4 +1,4 @@
-#version: '3'
+version: '2'
 
 services:
   pg_db:
@@ -45,7 +45,7 @@ services:
       CONTROL_CENTER_REPLICATION_FACTOR: "1"
 
   connect:
-    image: quay.io/debezium/connect:2.6
+    image: quay.io/debezium/connect:2.5
     ports:
       - "8083:8083"
     links:
@@ -58,13 +58,14 @@ services:
       - OFFSET_STORAGE_TOPIC=my_connect_offsets
       - STATUS_STORAGE_TOPIC=my_connect_statuses
 
-#  debezium-ui:
-#    image: quay.io/debezium/debezium-ui:2.5
-#    depends_on:
-#      - kafka
-#      - connect
-#      - zookeeper
-#    ports:
-#      - "8080:8080"
-#    environment:
-#      - KAFKA_CONNECT_URIS=http://connect:8083
+  debezium-ui:
+    image: quay.io/debezium/debezium-ui:2.5
+    platform: linux/x86_64
+    depends_on:
+      - kafka
+      - connect
+      - zookeeper
+    ports:
+      - "8081:8080"
+    environment:
+      - KAFKA_CONNECT_URIS=http://connect:8083
