@@ -49,7 +49,7 @@ services:
       - kafka
     environment:
       CONTROL_CENTER_BOOTSTRAP_SERVERS: "kafka:9092"
-      CONTROL_CENTER_REPLICATION_FACTOR: "1" # Set the replication factor here
+      CONTROL_CENTER_REPLICATION_FACTOR: "1"
   debezium-ui:
     image: quay.io/debezium/debezium-ui:2.5
     platform: linux/x86_64
