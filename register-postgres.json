@@ -1,5 +1,5 @@
 {
-  "name": "example-connector",
+  "name": "inventory-connector",
   "config": {
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
     "tasks.max": "1",
@@ -9,6 +9,6 @@
     "database.password": "postgres",
     "database.dbname": "postgres",
     "topic.prefix": "dbserver1",
-    "schema.include.list": "public"
+    "schema.include.list": "inventory"
   }
 }
