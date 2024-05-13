@@ -63,23 +63,9 @@ services:
       - KAFKA_CONNECT_URIS=http://connect:8083
 
   ch_server:
-    image: clickhouse/clickhouse-server:latest
+    image: clickhouse/clickhouse-server:24.4.1
     ports:
       - "8123:8123"
     environment:
       CLICKHOUSE_USER: click
       CLICKHOUSE_PASSWORD: click
-
-  #  jupyter:
-  #    image: jupyter/datascience-notebook:latest
-  #    container_name: jupyter_kafka
-  #    #    restart: always
-  #    volumes:
-  #      - /Users/i.korsakov/_code/:/home/jovyan/_code
-  #    ports:
-  #      - "8888:8888"
-  #    environment:
-  #      JUPYTER_ENABLE_LAB: "yes"
-  #      JUPYTER_TOKEN: "docker"
-  #      NB_USER: "root"
-  #      GRANT_SUDO: "yes"
