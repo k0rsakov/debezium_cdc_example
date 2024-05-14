@@ -1,6 +1,10 @@
 # CDC Debezium
 
-Пример создания CDC через Debezium
+Пример создания CDC через Debezium.
+
+[Статья на habr](https://github.com/k0rsakov/debezium_cdc_example).
+
+Для создания виртуального окружения выполните:
 
 ```bash
 python3.11 -m venv venv && \
