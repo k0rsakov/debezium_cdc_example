@@ -2,7 +2,7 @@
 
 Пример создания CDC через Debezium.
 
-[Статья на habr](https://github.com/k0rsakov/debezium_cdc_example).
+[Статья на habr](https://habr.com/ru/articles/812797/).
 
 Для создания виртуального окружения выполните:
 
